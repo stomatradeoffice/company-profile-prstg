@@ -7,6 +7,7 @@ const COLLECTOR = {
     USER_PROFILE: "/collector/user-profile-collector",
     REGISTER_PROFILE: "/collector/register-collector",
     HOME: "/collector/home-collector",
+    HARVEST_REPORT: "/collector/harvest-report-collector",
 }
 
 const INVESTOR = {
@@ -24,6 +25,7 @@ export const routes = {
         userProfile: () => COLLECTOR.USER_PROFILE,
         home: () => COLLECTOR.HOME,
         registerProfile: () => COLLECTOR.REGISTER_PROFILE,
+        harvestReport: () => COLLECTOR.HARVEST_REPORT,
         detail: (id: string | number) => `/products/${id}`,
     },
     investor: {

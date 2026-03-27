@@ -144,6 +144,7 @@ export default function Footer({
                         sx={{ width: "100%", maxWidth: "28rem" }}
                     >
                         <TextField
+                            id="newsletter-email"
                             name="email"
                             type="email"
                             placeholder="Enter a valid email address"

@@ -14,6 +14,7 @@ import {
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import BusinessIcon from "@mui/icons-material/Business";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import { themeConfig } from "@/core/config/theme-config";
 import { imageConfig } from "@/core/config/images-config";
 import { useAccount } from "wagmi";
@@ -42,14 +43,19 @@ export default function CollectorSidebar() {
       //   path: routes.collector.home(),
       // },
       {
-        label: "My Asset",
+        label: "Farmer Tracking",
         icon: <FolderOutlinedIcon />,
         path: routes.collector.myProject(),
       },
       {
-        label: "Tokenize Asset",
+        label: "Milestone Disburshment",
         icon: <AddCircleOutlineIcon />,
         path: routes.collector.addProject(),
+      },
+      {
+        label: "Harvest Report",
+        icon: <DescriptionOutlinedIcon />,
+        path: routes.collector.harvestReport(),
       },
       {
         label: "User Profile",
@@ -85,15 +91,19 @@ export default function CollectorSidebar() {
           pb: 3,
         }}
       >
-        <Box
-          component="img"
-          src={imageConfig.logo.stomatradeLogo}
-          alt="Stomatrade"
+        <Typography
+          variant="h6"
           sx={{
-            width: "auto",
-            height: "auto",
+            color: "#00CFFC",
+            fontWeight: 800,
+            letterSpacing: "0.5px",
+            fontSize: { xs: "1.25rem", md: "12" },
+            fontFamily: "Space Grotesk, sans-serif",
+            lineHeight: 1,
           }}
-        />
+        >
+          Prestige Ledger
+        </Typography>
       </Box>
 
       {/* User Info */}

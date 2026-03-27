@@ -1,5 +1,4 @@
 import { Box, Grid } from "@mui/material";
-import { Fragment } from "react";
 import Navbar from "./component/navbar";
 import HeroBanner from "./component/hero-banner";
 import StatCard from "./component/stat-card";
@@ -47,19 +46,13 @@ export default function LandingPageView() {
                     {/* Hero Banner */}
                     <HeroBanner
                         badgeText={heroBannerData.badgeText}
-                        heading={
-                            <Fragment>
-                                Explore the{" "}
-                                <Box component="span" sx={{ color: "var(--primary-colors)" }}>
-                                    Layered
-                                </Box>{" "}
-                                Revenue Ecosystem
-                            </Fragment>
-                        }
+                        heading={heroBannerData.heading}
+                        secheading={heroBannerData.secheading}
                         subheading={heroBannerData.subheading}
                         mobileBackgroundImage={heroBannerData.mobileBackgroundImage}
                         desktopBackgroundImage={heroBannerData.desktopBackgroundImage}
-                        primaryButtonLabel="Start building"
+                        primaryButtonLabel="Start Earning"
+                        secondaryButtonLabel="Explore RWA"
                     />
 
                 </Box>

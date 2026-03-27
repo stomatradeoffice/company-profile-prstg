@@ -8,6 +8,7 @@ import { ReactNode } from "react";
 interface HeroBannerProps {
     badgeText: string;
     heading: ReactNode;
+    secheading: string;
     subheading: string;
     mobileBackgroundImage: string;
     desktopBackgroundImage: string;
@@ -20,11 +21,12 @@ import { useLandingPageActions } from "../context/landing-page-context";
 export default function HeroBanner({
     badgeText,
     heading,
+    secheading,
     subheading,
     mobileBackgroundImage,
     desktopBackgroundImage,
     primaryButtonLabel,
-    secondaryButtonLabel,
+    secondaryButtonLabel 
 }: HeroBannerProps) {
     const { handleConnectWallet, handleLearnMore } = useLandingPageActions();
     return (
@@ -131,6 +133,19 @@ export default function HeroBanner({
                     {heading}
                 </Typography>
 
+                <Typography
+                    variant="h5"
+                    sx={{
+                        fontSize: { xs: "1.25rem", sm: "2rem", lg: "2.75rem" },
+                        fontWeight: 700,
+                        lineHeight: 1.1,
+                        letterSpacing: "-0.02em",
+                        color: "rgba(255,255,255,0.5)",
+                    }}
+                >
+                    {secheading}
+                </Typography>
+
                 {/* Subheading */}
                 <Typography
                     variant="body1"
@@ -171,7 +186,6 @@ export default function HeroBanner({
                     </Button>
                     {secondaryButtonLabel && (
                         <Button
-                            onClick={handleLearnMore}
                             variant="outlined"
                             sx={{
                                 borderRadius: "0.75rem",
