@@ -9,14 +9,15 @@ export const landingPageData = {
     ],
     heroBannerData: {
         badgeText: "DYNAMIC ECONOMY V2.0",
-        heading: "Explore the Layered Revenue Ecosystem",
-        subheading: "A multi-dimensional economic engine designed for sustainability, powering the next generation of decentralized commerce and global commodity exchange.",
+        heading: "Blockchain Ecosystem for the Global Food Economy",
+        secheading: "Real World Assets. On-Chain. Forever",
+        subheading: "Prestige tokenizes physical food commodities into tradeable, collateralizable blockchain assets - connecting farmers, investors, depots, and consumers through a single transparent protocol on Polygon PoS.",
         mobileBackgroundImage: imageConfig.background.mobile.bgBannerMobile,
         desktopBackgroundImage: imageConfig.background.desktop.bgBannerDesktop,
     },
     solvingProblemData: {
         header: {
-            logoSrc: "Prestige Ledger",
+            logoSrc: "Prestige Chain",
             heading: "Let’s make sustainable agriculture easy for you.",
             subheading: "Revolutionizing farming through decentralization.",
         },
@@ -45,7 +46,7 @@ export const landingPageData = {
     },
     growthData: {
         badgeText: "Prestige Token",
-        heading: "Growth with Prestige Ledger",
+        heading: "Growth with Prestige Chain",
         description: "Through decentralized finance (DeFi) protocols, we dismantle traditional agricultural monopolies, enabling a community-driven network where farmers and global investors can interact securely and seamlessly without central authorities",
         mobileBackgroundImage: imageConfig.background.mobile.bgMobile,
         desktopBackgroundImage: imageConfig.background.desktop.bgDesktop,

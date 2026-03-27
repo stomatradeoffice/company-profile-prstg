@@ -26,7 +26,7 @@ export default function Navbar({
     const { handleConnectWallet, handleNavItemClick } = useLandingPageActions();
     return (
         <AppBar
-            position="sticky"
+            position="static"
             elevation={0}
             sx={{
                 backgroundColor: "rgba(10, 10, 10, 0.7)",
@@ -57,7 +57,7 @@ export default function Navbar({
                             lineHeight: 1,
                         }}
                     >
-                        Prestige Ledger
+                        Prestige Chain
                     </Typography>
                 </Box>
 
