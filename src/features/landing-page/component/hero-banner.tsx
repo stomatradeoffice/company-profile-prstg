@@ -14,7 +14,6 @@ interface HeroBannerProps {
     desktopBackgroundImage: string;
     primaryButtonLabel: string;
     secondaryButtonLabel?: string;
-    thirdButtonLabel?:string;
 }
 
 import { useLandingPageActions } from "../context/landing-page-context";
@@ -27,8 +26,7 @@ export default function HeroBanner({
     mobileBackgroundImage,
     desktopBackgroundImage,
     primaryButtonLabel,
-    secondaryButtonLabel,
-    thirdButtonLabel
+    secondaryButtonLabel 
 }: HeroBannerProps) {
     const { handleConnectWallet, handleLearnMore } = useLandingPageActions();
     return (
@@ -209,27 +207,6 @@ export default function HeroBanner({
                             {secondaryButtonLabel}
                         </Button>
                     )}
-                    <Button
-                        variant="contained"
-                        sx={{
-                            borderRadius: "0.75rem",
-                            backgroundColor: "var(--primary-colors)",
-                            color: "#0A0A0A",
-                            fontWeight: 700,
-                            fontSize: "0.875rem",
-                            textTransform: "none",
-                            px: 3.5,
-                            py: 1.25,
-                            boxShadow: "none",
-                            "&:hover": {
-                                backgroundColor: "var(--third-colors)",
-                                boxShadow: "none",
-                            },
-                            transition: "all 0.3s",
-                        }}
-                    >
-                        {thirdButtonLabel}
-                    </Button>
                 </Stack>
             </Stack>
         </Box>

@@ -53,7 +53,6 @@ export default function LandingPageView() {
                         desktopBackgroundImage={heroBannerData.desktopBackgroundImage}
                         primaryButtonLabel="Start Earning"
                         secondaryButtonLabel="Explore RWA"
-                        thirdButtonLabel="Get $PRES - Rp.100"
                     />
 
                 </Box>
