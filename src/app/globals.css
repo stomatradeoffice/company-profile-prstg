@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  /* Background Colors */
+  --bg-colors: #0A0A0A;
+  --secondary-bg-colors: #171717;
+  --third-bg-colors: rgb(61, 61, 61);
+
+  /* Primary Colors */
+  --primary-colors: #00CFFC;
+  --secondary-colors: #00A8D4;
+  --third-colors: #33DAFF;
+  --four-green-colors: #007A99;
+
+  /* Neutral */
+  --white: #FFFFFF;
+  --skeleton-loading-color: #EDECF4;
+}
+
+@theme inline {
+  --color-background: var(--bg-colors);
+  --color-background-secondary: var(--secondary-bg-colors);
+  --color-background-third: var(--third-bg-colors);
+
+  --color-primary: var(--primary-colors);
+  --color-primary-secondary: var(--secondary-colors);
+  --color-primary-third: var(--third-colors);
+  --color-primary-dark: var(--four-green-colors);
+
+  --color-foreground: var(--white);
+  --color-skeleton: var(--skeleton-loading-color);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--bg-colors);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+}
