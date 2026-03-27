@@ -23,8 +23,8 @@ interface SocialLink {
 
 interface FooterProps {
     // Newsletter
-    // newsletterHeading: string;
-    // newsletterPrivacyText: string;
+    newsletterHeading: string;
+    newsletterPrivacyText: string;
     // newsletterBgImage: string;
 
     // Brand
