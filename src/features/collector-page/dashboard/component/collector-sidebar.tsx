@@ -91,15 +91,19 @@ export default function CollectorSidebar() {
           pb: 3,
         }}
       >
-        <Box
-          component="img"
-          src={imageConfig.logo.stomatradeLogo}
-          alt="Stomatrade"
+        <Typography
+          variant="h6"
           sx={{
-            width: "auto",
-            height: "auto",
+            color: "#00CFFC",
+            fontWeight: 800,
+            letterSpacing: "0.5px",
+            fontSize: { xs: "1.25rem", md: "12" },
+            fontFamily: "Space Grotesk, sans-serif",
+            lineHeight: 1,
           }}
-        />
+        >
+          Prestige Ledger
+        </Typography>
       </Box>
 
       {/* User Info */}
