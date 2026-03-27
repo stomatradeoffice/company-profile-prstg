@@ -15,54 +15,54 @@ export default function useUserProfile() {
     const { data: ensName } = useEnsName({ address });
     const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
 
-    const getUserProfile = useCallback(async () => {
-        setLoading(true)
+    // const getUserProfile = useCallback(async () => {
+    //     setLoading(true)
 
-        try {
-            const data: ProfileRequestModel = {
-                contractAddress: address ?? "",
-                role: "collector",
-            };
+    //     try {
+    //         const data: ProfileRequestModel = {
+    //             contractAddress: address ?? "",
+    //             role: "collector",
+    //         };
 
-            const result = await GetCollectorProfileRepository(data)
+    //         const result = await GetCollectorProfileRepository(data)
 
-            if (result !== null) {
-                result.contractAddress = address ?? ""
-                setUserData(result)
-            } else {
-                toast.error("Data Not Found", {
-                    position: 'top-center',
-                    style: {
-                        width: '600px',
-                        left: '50%',
-                        right: '50%',
-                        transform: 'translate(-50%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                    },
-                });
-            }
-        } catch (error) {
-            toast.error(`Get data failed: ${error}`, {
-                position: 'top-center',
-                style: {
-                    width: '600px',
-                    left: '50%',
-                    right: '50%',
-                    transform: 'translate(-50%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                },
-            });
-        }
+    //         if (result !== null) {
+    //             result.contractAddress = address ?? ""
+    //             setUserData(result)
+    //         } else {
+    //             toast.error("Data Not Found", {
+    //                 position: 'top-center',
+    //                 style: {
+    //                     width: '600px',
+    //                     left: '50%',
+    //                     right: '50%',
+    //                     transform: 'translate(-50%)',
+    //                     display: 'flex',
+    //                     alignItems: 'center',
+    //                 },
+    //             });
+    //         }
+    //     } catch (error) {
+    //         toast.error(`Get data failed: ${error}`, {
+    //             position: 'top-center',
+    //             style: {
+    //                 width: '600px',
+    //                 left: '50%',
+    //                 right: '50%',
+    //                 transform: 'translate(-50%)',
+    //                 display: 'flex',
+    //                 alignItems: 'center',
+    //             },
+    //         });
+    //     }
 
-        setLoading(false)
-    }, [address])
+    //     setLoading(false)
+    // }, [address])
 
-    useEffect(() => {
-        getUserProfile()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    // useEffect(() => {
+    //     getUserProfile()
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
 
     const openQrCode = useCallback(() => {
         setIsQrOpen(true)
