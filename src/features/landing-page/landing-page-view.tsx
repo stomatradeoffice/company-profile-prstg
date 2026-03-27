@@ -49,7 +49,7 @@ export default function LandingPageView() {
                         heading={heroBannerData.heading}
                         secheading={heroBannerData.secheading}
                         subheading={heroBannerData.subheading}
-                        mobileBackgroundImage={heroBannerData.mobileBackgroundImage}
+                        // mobileBackgroundImage={heroBannerData.mobileBackgroundImage}
                         desktopBackgroundImage={heroBannerData.desktopBackgroundImage}
                         primaryButtonLabel="Start Earning"
                         secondaryButtonLabel="Explore RWA"
@@ -95,7 +95,7 @@ export default function LandingPageView() {
                         badgeText={growthData.badgeText}
                         heading={growthData.heading}
                         description={growthData.description}
-                        mobileBackgroundImage={growthData.mobileBackgroundImage}
+                        // mobileBackgroundImage={growthData.mobileBackgroundImage}
                         desktopBackgroundImage={growthData.desktopBackgroundImage}
                     />
                 </Box>
@@ -105,7 +105,7 @@ export default function LandingPageView() {
                     <Footer
                         newsletterHeading={footerData.newsletter.heading}
                         newsletterPrivacyText={footerData.newsletter.privacyText}
-                        newsletterBgImage={footerData.newsletter.bgImage}
+                        // newsletterBgImage={footerData.newsletter.bgImage}
                         logoSrc={logoSrc}
                         brandDescription={footerData.brand.description}
                         socialLinks={footerData.socialLinks}

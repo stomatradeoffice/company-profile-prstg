@@ -10,7 +10,7 @@ interface HeroBannerProps {
     heading: ReactNode;
     secheading: string;
     subheading: string;
-    mobileBackgroundImage: string;
+    // mobileBackgroundImage: string;
     desktopBackgroundImage: string;
     primaryButtonLabel: string;
     secondaryButtonLabel?: string;
@@ -23,7 +23,7 @@ export default function HeroBanner({
     heading,
     secheading,
     subheading,
-    mobileBackgroundImage,
+    // mobileBackgroundImage,
     desktopBackgroundImage,
     primaryButtonLabel,
     secondaryButtonLabel 
@@ -44,7 +44,7 @@ export default function HeroBanner({
             }}
         >
             {/* Background Image - Mobile */}
-            <Box sx={{ display: { xs: "block", md: "none" }, position: "absolute", inset: 0, zIndex: 0 }}>
+            {/* <Box sx={{ display: { xs: "block", md: "none" }, position: "absolute", inset: 0, zIndex: 0 }}>
                 <Image
                     src={mobileBackgroundImage}
                     alt="Banner Background"
@@ -53,7 +53,7 @@ export default function HeroBanner({
                     style={{ objectPosition: "center" }}
                     sizes="100vw"
                 />
-            </Box>
+            </Box> */}
 
             {/* Background Image - Desktop */}
             <Box sx={{ display: { xs: "none", md: "block" }, position: "absolute", inset: 0, zIndex: 0 }}>

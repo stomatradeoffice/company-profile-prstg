@@ -25,7 +25,7 @@ interface FooterProps {
     // Newsletter
     newsletterHeading: string;
     newsletterPrivacyText: string;
-    newsletterBgImage: string;
+    // newsletterBgImage: string;
 
     // Brand
     logoSrc: string;
@@ -75,7 +75,7 @@ import { useLandingPageActions } from "../context/landing-page-context";
 export default function Footer({
     newsletterHeading,
     newsletterPrivacyText,
-    newsletterBgImage,
+    // newsletterBgImage,
     logoSrc,
     brandDescription,
     socialLinks,
@@ -108,13 +108,13 @@ export default function Footer({
                 }}
             >
                 {/* Background */}
-                <Image
+                {/* <Image
                     src={newsletterBgImage}
                     alt=""
                     fill
                     style={{ objectFit: "cover", objectPosition: "top center", zIndex: 0 }}
                     sizes="100vw"
-                />
+                /> */}
                 {/* <Box sx={{ position: "absolute", inset: 0, zIndex: 1, backgroundColor: "rgba(10,10,10,0.65)" }} /> */}
 
                 {/* Content */}
