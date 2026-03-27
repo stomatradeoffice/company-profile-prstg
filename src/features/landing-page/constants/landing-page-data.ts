@@ -45,7 +45,7 @@ export const landingPageData = {
         ],
     },
     growthData: {
-        badgeText: "Prestige Token",
+        badgeText: "Prestige Chain",
         heading: "Growth with Prestige Chain",
         description: "Through decentralized finance (DeFi) protocols, we dismantle traditional agricultural monopolies, enabling a community-driven network where farmers and global investors can interact securely and seamlessly without central authorities",
         mobileBackgroundImage: imageConfig.background.mobile.bgMobile,
@@ -54,7 +54,7 @@ export const landingPageData = {
     footerData: {
         newsletter: {
             heading: "Let's connect and create a positive impact together.",
-            privacyText: "Your privacy is our ultimate priority. Prestige Ledger secures your personal data and will never share it without your consent. Read our Privacy Policy to learn more.",
+            privacyText: "Your privacy is our ultimate priority. Prestige Chain secures your personal data and will never share it without your consent. Read our Privacy Policy to learn more.",
             bgImage: imageConfig.background.desktop.bgDesktop,
         },
         brand: {
@@ -69,14 +69,14 @@ export const landingPageData = {
         ],
         linkColumns: [
             { title: "Discover", links: [{ label: "About us", href: "#" }, { label: "Features", href: "#" }, { label: "Community", href: "#" }, { label: "Ecosystem", href: "#" }] },
-            { title: "Resources", links: [{ label: "Whitepaper", href: "#" }, { label: "Staking", href: "#" }, { label: "Prestige Token", href: "#" }, { label: "Partners", href: "#" }] },
+            { title: "Resources", links: [{ label: "Whitepaper", href: "#" }, { label: "Staking", href: "#" }, { label: "Prestige Chain", href: "#" }, { label: "Partners", href: "#" }] },
             { title: "Our Communities", links: [{ label: "Become a Validator", href: "#" }, { label: "Event", href: "#" }, { label: "FAQ", href: "#" }] },
         ],
         contactItems: [
             { icon: "phone", label: "+123 456 7890", href: "tel:+1234567890" },
-            { icon: "email", label: "prestige.ledger@gmail.com", href: "mailto:prestige.ledger@gmail.com" },
+            { icon: "email", label: "prestige.chain@gmail.com", href: "mailto:prestige.Chain@gmail.com" },
         ],
-        copyrightText: "© 2026 Prestige Ledger. All rights reserved.",
+        copyrightText: "© 2026 Prestige Chain. All rights reserved.",
         legalLinks: [
             { label: "Privacy Policy", href: "#" },
             { label: "Terms of Use", href: "#" },
@@ -84,5 +84,5 @@ export const landingPageData = {
             { label: "Site Map", href: "#" },
         ],
     },
-    logoSrc: "Prestige Ledger",
+    logoSrc: "Prestige Chain",
 };

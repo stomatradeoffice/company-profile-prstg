@@ -23,8 +23,8 @@ interface SocialLink {
 
 interface FooterProps {
     // Newsletter
-    newsletterHeading: string;
-    newsletterPrivacyText: string;
+    // newsletterHeading: string;
+    // newsletterPrivacyText: string;
     // newsletterBgImage: string;
 
     // Brand
@@ -73,8 +73,8 @@ const socialIcons: Record<string, React.ReactNode> = {
 import { useLandingPageActions } from "../context/landing-page-context";
 
 export default function Footer({
-    newsletterHeading,
-    newsletterPrivacyText,
+    // newsletterHeading,
+    // newsletterPrivacyText,
     // newsletterBgImage,
     logoSrc,
     brandDescription,
@@ -123,7 +123,7 @@ export default function Footer({
                     spacing={3}
                     sx={{ position: "relative", zIndex: 2, maxWidth: "36rem", mx: "auto", textAlign: "center" }}
                 >
-                    <Typography
+                    {/* <Typography
                         variant="h4"
                         sx={{
                             fontSize: { xs: "1.25rem", sm: "1.5rem", lg: "1.75rem" },
@@ -133,10 +133,10 @@ export default function Footer({
                         }}
                     >
                         {newsletterHeading}
-                    </Typography>
+                    </Typography> */}
 
                     {/* Email Form */}
-                    <Stack
+                    {/* <Stack
                         component="form"
                         onSubmit={handleSubmit}
                         direction="row"
@@ -180,14 +180,14 @@ export default function Footer({
                         >
                             Sign up
                         </Button>
-                    </Stack>
+                    </Stack> */}
 
-                    <Typography
+                    {/* <Typography
                         variant="caption"
                         sx={{ color: "rgba(255,255,255,0.4)", fontSize: "0.7rem", lineHeight: 1.6, maxWidth: "26rem" }}
                     >
                         {newsletterPrivacyText}
-                    </Typography>
+                    </Typography> */}
                 </Stack>
             </Box>
 
