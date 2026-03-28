@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stomatrade",
-  description: "Stomatrade RWA-Fi for a Faster Agriculture Economy",
+  title: "Agrotech",
+  description: "",
 };
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';

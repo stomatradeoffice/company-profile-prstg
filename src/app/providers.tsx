@@ -34,7 +34,7 @@ import { arbitrum, mainnet, sepolia } from 'wagmi/chains'
 import { cookieStorage, createStorage } from 'wagmi'
 
 const config = getDefaultConfig({
-  appName: 'Stomatrade',
+  appName: 'Agrotech',
   projectId: '852a9ba61459e8efb27a9a3631d2c883',
   chains: [mainnet, arbitrum, sepolia],
   ssr: true,
