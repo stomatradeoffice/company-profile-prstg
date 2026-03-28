@@ -11,10 +11,14 @@ import {
   Typography,
   Avatar,
 } from "@mui/material";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
-import BusinessIcon from "@mui/icons-material/Business";
+import AgricultureOutlinedIcon from "@mui/icons-material/AgricultureOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
+import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
+import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { themeConfig } from "@/core/config/theme-config";
 import { imageConfig } from "@/core/config/images-config";
 import { useAccount } from "wagmi";
@@ -44,12 +48,32 @@ export default function CollectorSidebar() {
       // },
       {
         label: "Farmer Tracking",
-        icon: <FolderOutlinedIcon />,
+        icon: <AgricultureOutlinedIcon />,
         path: routes.collector.myProject(),
       },
       {
+        label: "Logistic",
+        icon: <LocalShippingOutlinedIcon />,
+        path: routes.collector.logistic(),
+      },
+      {
+        label: "Insurance",
+        icon: <ShieldOutlinedIcon />,
+        path: routes.collector.insurance(),
+      },
+      {
+        label: "Warehouse",
+        icon: <WarehouseOutlinedIcon />,
+        path: routes.collector.warehouse(),
+      },
+      {
+        label: "Receipts",
+        icon: <ReceiptLongOutlinedIcon />,
+        path: routes.collector.receipts(),
+      },
+      {
         label: "Milestone Disburshment",
-        icon: <AddCircleOutlineIcon />,
+        icon: <AccountBalanceWalletOutlinedIcon />,
         path: routes.collector.addProject(),
       },
       {
@@ -59,7 +83,7 @@ export default function CollectorSidebar() {
       },
       {
         label: "User Profile",
-        icon: <BusinessIcon />,
+        icon: <PersonOutlineOutlinedIcon />,
         path: routes.collector.userProfile(),
       },
     ],
@@ -94,15 +118,15 @@ export default function CollectorSidebar() {
         <Typography
           variant="h6"
           sx={{
-            color: "#00CFFC",
+            color: theme.colors.primaryColors,
             fontWeight: 800,
             letterSpacing: "0.5px",
-            fontSize: { xs: "1.25rem", md: "12" },
-            fontFamily: "Space Grotesk, sans-serif",
+            fontSize: { xs: 20, md: 24 },
+            fontFamily: "'Space Grotesk', sans-serif",
             lineHeight: 1,
           }}
         >
-          Prestige Ledger
+          Agrotech
         </Typography>
       </Box>
 
