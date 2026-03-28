@@ -87,9 +87,9 @@ export default function HeroBanner({
                     position: "relative",
                     zIndex: 10,
                     textAlign: "center",
-                    px: 3,
-                    pt: 12,
-                    pb: 8,
+                    // px: 3,
+                    // pt: 12,
+                    // pb: 8,
                     maxWidth: "56rem",
                     mx: "auto",
                 }}
