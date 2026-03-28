@@ -227,8 +227,10 @@ export default function WarehouseView() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", sm: "center" },
+          gap: { xs: 1, sm: 2 },
           bgcolor: "rgba(239, 68, 68, 0.1)",
           borderLeft: `4px solid #EF4444`,
           p: 1.5,
@@ -237,10 +239,10 @@ export default function WarehouseView() {
         }}
       >
         <Box display="flex" alignItems="center" gap={2}>
-          <WarningAmberIcon sx={{ color: "#EF4444" }} />
+          <WarningAmberIcon sx={{ color: "#EF4444", display: { xs: "none", sm: "block" } }} />
           <Typography
             variant="body2"
-            sx={{ color: "#EF4444", fontWeight: 600 }}
+            sx={{ color: "#EF4444", fontWeight: 600, fontSize: { xs: 12, sm: 14 } }}
           >
             ALERT: GDG-03 Indramayu suhu ruang 31.8°C melebihi batas 28°C —
             risiko kerusakan komoditas gula. GDG-06 kapasitas 97% hampir penuh.
@@ -249,7 +251,7 @@ export default function WarehouseView() {
         </Box>
         <Typography
           variant="caption"
-          sx={{ color: "#EF4444", fontWeight: 700 }}
+          sx={{ color: "#EF4444", fontWeight: 700, whiteSpace: "nowrap" }}
         >
           2 Alerts Aktif
         </Typography>
@@ -1161,7 +1163,7 @@ export default function WarehouseView() {
           </Box>
         </Box>
         <TableContainer>
-          <Table size="small">
+          <Table size="small" sx={{ minWidth: 900 }}>
             <TableHead>
               <TableRow>
                 {[

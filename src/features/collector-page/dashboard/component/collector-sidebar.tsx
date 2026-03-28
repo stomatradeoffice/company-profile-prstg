@@ -33,7 +33,13 @@ interface NavItem {
   path: string;
 }
 
-export default function CollectorSidebar() {
+export default function CollectorSidebar({
+  mobileOpen,
+  handleDrawerToggle,
+}: {
+  mobileOpen?: boolean;
+  handleDrawerToggle?: () => void;
+}) {
   const theme = themeConfig;
   const { address } = useAccount();
   const pathname = usePathname();
@@ -90,22 +96,8 @@ export default function CollectorSidebar() {
     [],
   );
 
-  return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: SIDEBAR_WIDTH,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: SIDEBAR_WIDTH,
-          boxSizing: "border-box",
-          backgroundColor: theme.colors.bgColors,
-          borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
-          color: theme.colors.white,
-          paddingTop: "16px",
-        },
-      }}
-    >
+  const drawerContent = (
+    <>
       <Box
         sx={{
           display: "flex",
@@ -185,7 +177,12 @@ export default function CollectorSidebar() {
           return (
             <ListItemButton
               key={item.path}
-              onClick={() => router.push(item.path)}
+              onClick={() => {
+                router.push(item.path);
+                if (handleDrawerToggle) {
+                  handleDrawerToggle(); // Close drawer on mobile after navigation
+                }
+              }}
               sx={{
                 borderRadius: "8px",
                 mb: 0.5,
@@ -230,6 +227,53 @@ export default function CollectorSidebar() {
           );
         })}
       </List>
-    </Drawer>
+    </>
+  );
+
+  return (
+    <Box
+      component="nav"
+      sx={{ width: { md: SIDEBAR_WIDTH }, flexShrink: { md: 0 } }}
+      aria-label="mailbox folders"
+    >
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: SIDEBAR_WIDTH,
+            backgroundColor: theme.colors.bgColors,
+            borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
+            color: theme.colors.white,
+            paddingTop: "16px",
+          },
+        }}
+      >
+        {drawerContent}
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", md: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: SIDEBAR_WIDTH,
+            backgroundColor: theme.colors.bgColors,
+            borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
+            color: theme.colors.white,
+            paddingTop: "16px",
+          },
+        }}
+        open
+      >
+        {drawerContent}
+      </Drawer>
+    </Box>
   );
 }

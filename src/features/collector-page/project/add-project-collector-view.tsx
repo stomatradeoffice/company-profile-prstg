@@ -41,7 +41,7 @@ export default function AddProjectCollectorView() {
     <Box
       display="flex"
       flexDirection="column"
-      padding={{ xs: "100px 20px 40px", md: "40px" }}
+      padding={{ xs: "20px 16px 40px", md: "40px" }}
       maxWidth="1400px" // Bounded width similar to the other view
       margin="0 auto"
       width="100%"
@@ -192,7 +192,7 @@ export default function AddProjectCollectorView() {
               </Box>
               
               <TableContainer>
-                <Table>
+                <Table sx={{ minWidth: 650 }}>
                   <TableHead>
                     <TableRow sx={{ borderBottom: `1px solid ${borderColors}` }}>
                       {['FARMER / PROJECT', 'MILESTONE', 'AMOUNT', 'STATUS'].map((col) => (
