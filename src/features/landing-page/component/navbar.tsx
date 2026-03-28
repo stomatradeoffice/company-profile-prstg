@@ -67,7 +67,7 @@ export default function Navbar({
               lineHeight: 1,
             }}
           >
-            Prestige Chain
+            Agrotech
           </Typography>
         </Box>
 

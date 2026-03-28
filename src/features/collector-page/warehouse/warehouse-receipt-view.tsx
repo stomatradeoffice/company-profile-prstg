@@ -202,7 +202,7 @@ export default function WarehouseReceiptView() {
             variant="body2"
             sx={{ color: theme.colors.thirdColors, fontSize: { xs: 11, sm: 13 } }}
           >
-            Sistem Gudang Resi Prestige aktif — Semua transaksi masuk dan keluar
+            Sistem Gudang Resi Agrotech aktif — Semua transaksi masuk dan keluar
             dicatat permanen di Polygon POS — Setiap lot yang diverifikasi
             diterbitkan sebagai WRG NFT ERC-721.
           </Typography>
