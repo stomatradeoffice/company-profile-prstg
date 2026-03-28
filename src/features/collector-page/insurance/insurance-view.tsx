@@ -225,8 +225,10 @@ export default function InsuranceView() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", sm: "center" },
+          gap: { xs: 1, sm: 2 },
           bgcolor: "rgba(245, 158, 11, 0.1)",
           borderLeft: `4px solid #F59E0B`,
           p: 1.5,
@@ -235,10 +237,10 @@ export default function InsuranceView() {
         }}
       >
         <Box display="flex" alignItems="center" gap={2}>
-          <WarningAmberIcon sx={{ color: "#F59E0B" }} />
+          <WarningAmberIcon sx={{ color: "#F59E0B", display: { xs: "none", sm: "block" } }} />
           <Typography
             variant="body2"
-            sx={{ color: "#F59E0B", fontWeight: 600 }}
+            sx={{ color: "#F59E0B", fontWeight: 600, fontSize: { xs: 12, sm: 14 } }}
           >
             Oracle cuaca mendeteksi potensi banjir di Indramayu 5 hari ke depan.
             8 polis aktif di zona GOG-03 dengan TSI total Rp 4.2M. Notifikasi
@@ -437,7 +439,7 @@ export default function InsuranceView() {
               </Typography>
             </Box>
             <TableContainer>
-              <Table size="small">
+              <Table size="small" sx={{ minWidth: 700 }}>
                 <TableHead>
                   <TableRow>
                     {[
@@ -1183,7 +1185,7 @@ export default function InsuranceView() {
           </Typography>
         </Box>
         <TableContainer>
-          <Table size="small">
+          <Table size="small" sx={{ minWidth: 900 }}>
             <TableHead>
               <TableRow>
                 {[

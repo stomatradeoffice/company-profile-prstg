@@ -182,8 +182,10 @@ export default function WarehouseReceiptView() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", sm: "center" },
+          gap: { xs: 1, sm: 2 },
           bgcolor: cardBg,
           border: `1px solid ${borderColor}`,
           borderLeft: `3px solid ${theme.colors.fourGreenColors}`,
@@ -194,11 +196,11 @@ export default function WarehouseReceiptView() {
       >
         <Box display="flex" alignItems="center" gap={1}>
           <InfoOutlinedIcon
-            sx={{ color: theme.colors.thirdColors, fontSize: 18 }}
+            sx={{ color: theme.colors.thirdColors, fontSize: 18, display: { xs: "none", sm: "block" } }}
           />
           <Typography
             variant="body2"
-            sx={{ color: theme.colors.thirdColors, fontSize: 13 }}
+            sx={{ color: theme.colors.thirdColors, fontSize: { xs: 11, sm: 13 } }}
           >
             Sistem Gudang Resi Prestige aktif — Semua transaksi masuk dan keluar
             dicatat permanen di Polygon POS — Setiap lot yang diverifikasi
@@ -207,7 +209,7 @@ export default function WarehouseReceiptView() {
         </Box>
         <Typography
           variant="caption"
-          sx={{ color: "#10B981", fontWeight: 700 }}
+          sx={{ color: "#10B981", fontWeight: 700, whiteSpace: "nowrap" }}
         >
           248 WRG Aktif On-Chain
         </Typography>
@@ -830,7 +832,7 @@ export default function WarehouseReceiptView() {
           </Box>
         </Box>
         <TableContainer>
-          <Table size="small">
+          <Table size="small" sx={{ minWidth: 900 }}>
             <TableHead>
               <TableRow>
                 {[

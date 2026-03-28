@@ -206,8 +206,10 @@ export default function LogisticView() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: { xs: "flex-start", sm: "center" },
+          gap: { xs: 1, sm: 2 },
           bgcolor: "rgba(239, 68, 68, 0.1)",
           borderLeft: `4px solid #EF4444`,
           p: 1.5,
@@ -216,10 +218,10 @@ export default function LogisticView() {
         }}
       >
         <Box display="flex" alignItems="center" gap={2}>
-          <WarningAmberIcon sx={{ color: "#EF4444" }} />
+          <WarningAmberIcon sx={{ color: "#EF4444", display: { xs: "none", sm: "block" } }} />
           <Typography
             variant="body2"
-            sx={{ color: "#EF4444", fontWeight: 600 }}
+            sx={{ color: "#EF4444", fontWeight: 600, fontSize: { xs: 12, sm: 14 } }}
           >
             TRK-008 — delay 2.5 jam, driver tidak terhubung 4G menit, muatan
             4,000 kg Jagung dari GDG-03. TRK-025 — ban bocor Tol Cipali KM-88,
@@ -320,7 +322,7 @@ export default function LogisticView() {
               alignItems="center"
               justifyContent="center"
               position="relative"
-              sx={{ minHeight: "350px", overflow: "hidden" }}
+              sx={{ minHeight: { xs: "200px", md: "350px" }, overflow: "hidden" }}
             >
               {/* Map Mockup via HTML/CSS positioning */}
 
@@ -880,7 +882,7 @@ export default function LogisticView() {
           </Typography>
         </Box>
         <TableContainer>
-          <Table size="small">
+          <Table size="small" sx={{ minWidth: 900 }}>
             <TableHead>
               <TableRow>
                 {[

@@ -1,6 +1,7 @@
 "use client";
 
-import { AppBar, Toolbar, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Button, Box, IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { themeConfig } from "@/core/config/theme-config";
 import { SIDEBAR_WIDTH } from "./collector-sidebar";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -9,10 +10,12 @@ import { useEffect } from "react";
 
 export interface CollectorNavbarProps {
   handleDisconnect: () => void;
+  handleDrawerToggle?: () => void;
 }
 
 export default function CollectorNavbar({
   handleDisconnect,
+  handleDrawerToggle,
 }: CollectorNavbarProps) {
   const theme = themeConfig;
 
@@ -29,15 +32,33 @@ export default function CollectorNavbar({
       position="fixed"
       elevation={0}
       sx={{
-        width: `calc(100% - ${SIDEBAR_WIDTH}px)`,
-        ml: `${SIDEBAR_WIDTH}px`,
+        width: { md: `calc(100% - ${SIDEBAR_WIDTH}px)` },
+        ml: { md: `${SIDEBAR_WIDTH}px` },
         backgroundColor: theme.colors.bgColors,
         borderBottom: `1px solid ${theme.colors.secondaryBgColors}`,
       }}
     >
       <Toolbar
-        sx={{ justifyContent: "flex-end", minHeight: "56px !important" }}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          minHeight: "56px !important",
+        }}
       >
+        <Box sx={{ display: { md: "none" } }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ color: theme.colors.primaryColors }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Box>
+
+        <Box sx={{ flexGrow: { xs: 0, md: 1 } }} />
+
         <ConnectButton.Custom>
           {({
             openConnectModal,
