@@ -4,9 +4,14 @@ import HeroBanner from "./component/hero-banner";
 import StatCard from "./component/stat-card";
 import SectionHeader from "./component/section-header";
 import BentoCard from "./component/bento-card";
+import NftPromoBanner from "./component/nft-promo-banner";
+import StablecoinPromoBanner from "./component/stablecoin-promo-banner";
+import CashbackNftBanner from "./component/cashback-nft-banner";
+import CenturyBanner from "./component/century-banner";
 import CtaBanner from "./component/cta-banner";
 import Footer from "./component/footer";
 import RoleDialog from "./component/role-dialog";
+import { imageConfig } from "@/core/config/images-config";
 
 import { LandingPageProvider } from "./context/landing-page-context";
 import { landingPageData } from "./constants/landing-page-data";
@@ -51,8 +56,7 @@ export default function LandingPageView() {
                         subheading={heroBannerData.subheading}
                         // mobileBackgroundImage={heroBannerData.mobileBackgroundImage}
                         desktopBackgroundImage={heroBannerData.desktopBackgroundImage}
-                        primaryButtonLabel="Start Earning"
-                        secondaryButtonLabel="Explore RWA"
+                        tabItems={heroBannerData.tabItems}
                     />
 
                 </Box>
@@ -75,7 +79,7 @@ export default function LandingPageView() {
                         />
 
                         {/* Bento Grid */}
-                        <Grid container spacing={1.5} columns={10}>
+                        {/* <Grid container spacing={1.5} columns={10} sx={{ mb: 4 }}>
                             {solvingProblemData.bentoCards.map((card) => (
                                 <Grid key={card.id} size={{ xs: 10, sm: 5, md: 2 }}>
                                     <BentoCard
@@ -85,12 +89,34 @@ export default function LandingPageView() {
                                     />
                                 </Grid>
                             ))}
-                        </Grid>
+                        </Grid> */}
+
+                        {/* NFT Promo Banner */}
+                        <NftPromoBanner imageSrc={imageConfig.icon.nftClaimIcon} />
+
+                        {/* Stablecoin Promo Banner */}
+                        <Box sx={{ mt: 6 }}>
+                            <StablecoinPromoBanner
+                                stakingImageSrc={imageConfig.icon.stakingIcon}
+                                userImageSrc={imageConfig.icon.userIcon}
+                            />
+                        </Box>
+
+                        {/* Cashback NFT Banner */}
+                        <Box sx={{ mt: 6 }}>
+                            <CashbackNftBanner imageSrc={imageConfig.icon.nftRewardIcon} />
+                        </Box>
+
+
+                        {/* Century Banner */}
+                        <Box sx={{ mt: 6 }}>
+                            <CenturyBanner imageSrc={imageConfig.icon.centuryIcon} />
+                        </Box>
                     </Box>
                 </Box>
 
                 {/* Growth with Stomatrade Section */}
-                <Box component="section" id="growth-with-stomatrade">
+                {/* <Box component="section" id="growth-with-stomatrade">
                     <CtaBanner
                         badgeText={growthData.badgeText}
                         heading={growthData.heading}
@@ -98,21 +124,15 @@ export default function LandingPageView() {
                         // mobileBackgroundImage={growthData.mobileBackgroundImage}
                         desktopBackgroundImage={growthData.desktopBackgroundImage}
                     />
-                </Box>
+                </Box> */}
 
                 {/* Footer Section */}
                 <Box component="section" id="footer">
                     <Footer
-                        newsletterHeading={footerData.newsletter.heading}
-                        newsletterPrivacyText={footerData.newsletter.privacyText}
-                        // newsletterBgImage={footerData.newsletter.bgImage}
                         logoSrc={logoSrc}
-                        brandDescription={footerData.brand.description}
                         socialLinks={footerData.socialLinks}
                         linkColumns={footerData.linkColumns}
-                        contactItems={footerData.contactItems}
                         copyrightText={footerData.copyrightText}
-                        legalLinks={footerData.legalLinks}
                     />
                 </Box>
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { AppBar, Toolbar, Box, Button, Stack, Typography } from "@mui/material";
 
 interface NavItem {
@@ -18,7 +17,6 @@ interface NavbarProps {
 import { useLandingPageActions } from "../context/landing-page-context";
 
 export default function Navbar({
-    logoSrc,
     navItems,
     ctaLabel,
     activeHref,
@@ -57,7 +55,7 @@ export default function Navbar({
                             lineHeight: 1,
                         }}
                     >
-                        Prestige Chain
+                        Agrotech
                     </Typography>
                 </Box>
 

@@ -1,9 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Box, Typography, Button, Stack } from "@mui/material";
-import NorthEastIcon from "@mui/icons-material/NorthEast";
+import { Box, Typography, Stack } from "@mui/material";
 import { ReactNode } from "react";
+
+interface TabItem {
+    label: string;
+    active: boolean;
+}
 
 interface HeroBannerProps {
     badgeText: string;
@@ -12,8 +16,7 @@ interface HeroBannerProps {
     subheading: string;
     // mobileBackgroundImage: string;
     desktopBackgroundImage: string;
-    primaryButtonLabel: string;
-    secondaryButtonLabel?: string;
+    tabItems: TabItem[];
 }
 
 import { useLandingPageActions } from "../context/landing-page-context";
@@ -25,10 +28,9 @@ export default function HeroBanner({
     subheading,
     // mobileBackgroundImage,
     desktopBackgroundImage,
-    primaryButtonLabel,
-    secondaryButtonLabel 
+    tabItems,
 }: HeroBannerProps) {
-    const { handleConnectWallet, handleLearnMore } = useLandingPageActions();
+    const { handleConnectWallet } = useLandingPageActions();
     return (
         <Box
             component="section"
@@ -85,9 +87,9 @@ export default function HeroBanner({
                     position: "relative",
                     zIndex: 10,
                     textAlign: "center",
-                    px: 3,
-                    pt: 12,
-                    pb: 8,
+                    // px: 3,
+                    // pt: 12,
+                    // pb: 8,
                     maxWidth: "56rem",
                     mx: "auto",
                 }}
@@ -159,55 +161,52 @@ export default function HeroBanner({
                     {subheading}
                 </Typography>
 
-                {/* CTA Buttons */}
-                <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-                    <Button
-                        onClick={handleConnectWallet}
-                        variant="contained"
-                        endIcon={<NorthEastIcon sx={{ fontSize: 16 }} />}
-                        sx={{
-                            borderRadius: "0.75rem",
-                            backgroundColor: "var(--primary-colors)",
-                            color: "#0A0A0A",
-                            fontWeight: 700,
-                            fontSize: "0.875rem",
-                            textTransform: "none",
-                            px: 3.5,
-                            py: 1.25,
-                            boxShadow: "none",
-                            "&:hover": {
-                                backgroundColor: "var(--third-colors)",
-                                boxShadow: "none",
-                            },
-                            transition: "all 0.3s",
-                        }}
-                    >
-                        {primaryButtonLabel}
-                    </Button>
-                    {secondaryButtonLabel && (
-                        <Button
-                            variant="outlined"
+                {/* Tab Pills */}
+                <Box
+                    sx={{
+                        mt: 2,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 1.5,
+                        backgroundColor: "rgba(10,10,10,0.5)",
+                        border: "1px solid rgba(0,207,252,0.25)",
+                        borderRadius: "9999px",
+                        backdropFilter: "blur(16px)",
+                        boxShadow: "0 0 32px rgba(0,207,252,0.08), inset 0 0 24px rgba(0,207,252,0.04)",
+                        p: "6px",
+                    }}
+                >
+                    {tabItems.map((tab) => (
+                        <Box
+                            key={tab.label}
+                            onClick={handleConnectWallet}
                             sx={{
-                                borderRadius: "0.75rem",
-                                borderColor: "rgba(255,255,255,0.2)",
-                                backgroundColor: "rgba(255,255,255,0.05)",
-                                color: "white",
-                                fontWeight: 600,
-                                fontSize: "0.875rem",
-                                textTransform: "none",
-                                px: 3.5,
-                                py: 1.25,
+                                px: { xs: 3.5, sm: 5 },
+                                py: { xs: 1.25, sm: 1.5 },
+                                borderRadius: "9999px",
+                                cursor: "pointer",
+                                border: tab.active ? "none" : "1px solid rgba(0,207,252,0.5)",
+                                backgroundColor: tab.active ? "var(--primary-colors)" : "rgba(255,255,255,0.03)",
+                                color: tab.active ? "#0A0A0A" : "rgba(255,255,255,0.85)",
+                                fontWeight: tab.active ? 700 : 500,
+                                fontSize: { xs: "0.875rem", sm: "1rem" },
+                                letterSpacing: "0.02em",
+                                fontFamily: "Space Grotesk, sans-serif",
+                                transition: "all 0.25s",
+                                userSelect: "none",
+                                boxShadow: tab.active ? "0 0 20px rgba(0,207,252,0.35)" : "none",
                                 "&:hover": {
-                                    backgroundColor: "rgba(255,255,255,0.1)",
-                                    borderColor: "rgba(255,255,255,0.3)",
+                                    backgroundColor: tab.active ? "var(--third-colors)" : "rgba(0,207,252,0.1)",
+                                    borderColor: tab.active ? "transparent" : "rgba(0,207,252,0.8)",
+                                    color: tab.active ? "#0A0A0A" : "#00CFFC",
+                                    boxShadow: tab.active ? "0 0 28px rgba(0,207,252,0.45)" : "none",
                                 },
-                                transition: "all 0.3s",
                             }}
                         >
-                            {secondaryButtonLabel}
-                        </Button>
-                    )}
-                </Stack>
+                            {tab.label}
+                        </Box>
+                    ))}
+                </Box>
             </Stack>
         </Box>
     );
