@@ -8,7 +8,7 @@ interface CtaBannerProps {
     badgeText?: string;
     heading: string;
     description?: string;
-    mobileBackgroundImage?: string;
+    // mobileBackgroundImage?: string;
     desktopBackgroundImage?: string;
     primaryButtonLabel?: string;
     secondaryButtonLabel?: string;
@@ -20,7 +20,7 @@ export default function CtaBanner({
     badgeText,
     heading,
     description,
-    mobileBackgroundImage,
+    // mobileBackgroundImage,
     desktopBackgroundImage,
     primaryButtonLabel,
     secondaryButtonLabel,
@@ -41,7 +41,7 @@ export default function CtaBanner({
             }}
         >
             {/* Background Image - Mobile */}
-            {mobileBackgroundImage && (
+            {/* {mobileBackgroundImage && (
                 <Box sx={{ display: { xs: "block", md: "none" }, position: "absolute", inset: 0, zIndex: 0 }}>
                     <Image
                         src={mobileBackgroundImage}
@@ -51,7 +51,7 @@ export default function CtaBanner({
                         sizes="100vw"
                     />
                 </Box>
-            )}
+            )} */}
 
             {/* Background Image - Desktop */}
             {desktopBackgroundImage && (

@@ -25,7 +25,7 @@ interface FooterProps {
     // Newsletter
     newsletterHeading: string;
     newsletterPrivacyText: string;
-    newsletterBgImage: string;
+    // newsletterBgImage: string;
 
     // Brand
     logoSrc: string;
@@ -73,9 +73,9 @@ const socialIcons: Record<string, React.ReactNode> = {
 import { useLandingPageActions } from "../context/landing-page-context";
 
 export default function Footer({
-    newsletterHeading,
-    newsletterPrivacyText,
-    newsletterBgImage,
+    // newsletterHeading,
+    // newsletterPrivacyText,
+    // newsletterBgImage,
     logoSrc,
     brandDescription,
     socialLinks,
@@ -108,13 +108,13 @@ export default function Footer({
                 }}
             >
                 {/* Background */}
-                <Image
+                {/* <Image
                     src={newsletterBgImage}
                     alt=""
                     fill
                     style={{ objectFit: "cover", objectPosition: "top center", zIndex: 0 }}
                     sizes="100vw"
-                />
+                /> */}
                 {/* <Box sx={{ position: "absolute", inset: 0, zIndex: 1, backgroundColor: "rgba(10,10,10,0.65)" }} /> */}
 
                 {/* Content */}
@@ -123,7 +123,7 @@ export default function Footer({
                     spacing={3}
                     sx={{ position: "relative", zIndex: 2, maxWidth: "36rem", mx: "auto", textAlign: "center" }}
                 >
-                    <Typography
+                    {/* <Typography
                         variant="h4"
                         sx={{
                             fontSize: { xs: "1.25rem", sm: "1.5rem", lg: "1.75rem" },
@@ -133,10 +133,10 @@ export default function Footer({
                         }}
                     >
                         {newsletterHeading}
-                    </Typography>
+                    </Typography> */}
 
                     {/* Email Form */}
-                    <Stack
+                    {/* <Stack
                         component="form"
                         onSubmit={handleSubmit}
                         direction="row"
@@ -144,6 +144,7 @@ export default function Footer({
                         sx={{ width: "100%", maxWidth: "28rem" }}
                     >
                         <TextField
+                            id="newsletter-email"
                             name="email"
                             type="email"
                             placeholder="Enter a valid email address"
@@ -179,14 +180,14 @@ export default function Footer({
                         >
                             Sign up
                         </Button>
-                    </Stack>
+                    </Stack> */}
 
-                    <Typography
+                    {/* <Typography
                         variant="caption"
                         sx={{ color: "rgba(255,255,255,0.4)", fontSize: "0.7rem", lineHeight: 1.6, maxWidth: "26rem" }}
                     >
                         {newsletterPrivacyText}
-                    </Typography>
+                    </Typography> */}
                 </Stack>
             </Box>
 
