@@ -118,15 +118,15 @@ export default function CollectorSidebar() {
         <Typography
           variant="h6"
           sx={{
-            color: "#00CFFC",
+            color: theme.colors.primaryColors,
             fontWeight: 800,
             letterSpacing: "0.5px",
-            fontSize: { xs: "1.25rem", md: "12" },
-            fontFamily: "Space Grotesk, sans-serif",
+            fontSize: { xs: 20, md: 24 },
+            fontFamily: "'Space Grotesk', sans-serif",
             lineHeight: 1,
           }}
         >
-          Prestige Ledger
+          Agrotech
         </Typography>
       </Box>
 
