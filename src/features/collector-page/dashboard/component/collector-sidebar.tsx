@@ -11,10 +11,14 @@ import {
   Typography,
   Avatar,
 } from "@mui/material";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
-import BusinessIcon from "@mui/icons-material/Business";
+import AgricultureOutlinedIcon from "@mui/icons-material/AgricultureOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
+import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
+import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { themeConfig } from "@/core/config/theme-config";
 import { imageConfig } from "@/core/config/images-config";
 import { useAccount } from "wagmi";
@@ -29,7 +33,13 @@ interface NavItem {
   path: string;
 }
 
-export default function CollectorSidebar() {
+export default function CollectorSidebar({
+  mobileOpen,
+  handleDrawerToggle,
+}: {
+  mobileOpen?: boolean;
+  handleDrawerToggle?: () => void;
+}) {
   const theme = themeConfig;
   const { address } = useAccount();
   const pathname = usePathname();
@@ -44,12 +54,32 @@ export default function CollectorSidebar() {
       // },
       {
         label: "Farmer Tracking",
-        icon: <FolderOutlinedIcon />,
+        icon: <AgricultureOutlinedIcon />,
         path: routes.collector.myProject(),
       },
       {
+        label: "Logistic",
+        icon: <LocalShippingOutlinedIcon />,
+        path: routes.collector.logistic(),
+      },
+      {
+        label: "Insurance",
+        icon: <ShieldOutlinedIcon />,
+        path: routes.collector.insurance(),
+      },
+      {
+        label: "Warehouse",
+        icon: <WarehouseOutlinedIcon />,
+        path: routes.collector.warehouse(),
+      },
+      {
+        label: "Receipts",
+        icon: <ReceiptLongOutlinedIcon />,
+        path: routes.collector.receipts(),
+      },
+      {
         label: "Milestone Disburshment",
-        icon: <AddCircleOutlineIcon />,
+        icon: <AccountBalanceWalletOutlinedIcon />,
         path: routes.collector.addProject(),
       },
       {
@@ -59,29 +89,15 @@ export default function CollectorSidebar() {
       },
       {
         label: "User Profile",
-        icon: <BusinessIcon />,
+        icon: <PersonOutlineOutlinedIcon />,
         path: routes.collector.userProfile(),
       },
     ],
     [],
   );
 
-  return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: SIDEBAR_WIDTH,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: SIDEBAR_WIDTH,
-          boxSizing: "border-box",
-          backgroundColor: theme.colors.bgColors,
-          borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
-          color: theme.colors.white,
-          paddingTop: "16px",
-        },
-      }}
-    >
+  const drawerContent = (
+    <>
       <Box
         sx={{
           display: "flex",
@@ -94,15 +110,15 @@ export default function CollectorSidebar() {
         <Typography
           variant="h6"
           sx={{
-            color: "#00CFFC",
+            color: theme.colors.primaryColors,
             fontWeight: 800,
             letterSpacing: "0.5px",
-            fontSize: { xs: "1.25rem", md: "12" },
-            fontFamily: "Space Grotesk, sans-serif",
+            fontSize: { xs: 20, md: 24 },
+            fontFamily: "'Space Grotesk', sans-serif",
             lineHeight: 1,
           }}
         >
-          Prestige Ledger
+          Agrotech
         </Typography>
       </Box>
 
@@ -161,7 +177,12 @@ export default function CollectorSidebar() {
           return (
             <ListItemButton
               key={item.path}
-              onClick={() => router.push(item.path)}
+              onClick={() => {
+                router.push(item.path);
+                if (handleDrawerToggle) {
+                  handleDrawerToggle(); // Close drawer on mobile after navigation
+                }
+              }}
               sx={{
                 borderRadius: "8px",
                 mb: 0.5,
@@ -206,6 +227,53 @@ export default function CollectorSidebar() {
           );
         })}
       </List>
-    </Drawer>
+    </>
+  );
+
+  return (
+    <Box
+      component="nav"
+      sx={{ width: { md: SIDEBAR_WIDTH }, flexShrink: { md: 0 } }}
+      aria-label="mailbox folders"
+    >
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: SIDEBAR_WIDTH,
+            backgroundColor: theme.colors.bgColors,
+            borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
+            color: theme.colors.white,
+            paddingTop: "16px",
+          },
+        }}
+      >
+        {drawerContent}
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", md: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: SIDEBAR_WIDTH,
+            backgroundColor: theme.colors.bgColors,
+            borderRight: `1px solid ${theme.colors.secondaryBgColors}`,
+            color: theme.colors.white,
+            paddingTop: "16px",
+          },
+        }}
+        open
+      >
+        {drawerContent}
+      </Drawer>
+    </Box>
   );
 }

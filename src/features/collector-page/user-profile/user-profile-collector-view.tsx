@@ -57,7 +57,7 @@ export default function UserProfileCollectorView() {
     <Box
       display="flex"
       flexDirection="column"
-      padding={{ xs: "100px 20px 40px", md: "40px" }}
+      padding={{ xs: "20px 16px 40px", md: "40px" }}
       maxWidth="1400px"
       margin="0 auto"
       width="100%"

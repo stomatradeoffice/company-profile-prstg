@@ -7,6 +7,10 @@ const COLLECTOR = {
     USER_PROFILE: "/collector/user-profile-collector",
     REGISTER_PROFILE: "/collector/register-collector",
     HOME: "/collector/home-collector",
+    INSURANCE: "/collector/insurance-collector",
+    LOGISTIC: "/collector/logistic-collector",
+    WAREHOUSE: "/collector/warehouse-collector",
+    WAREHOUSE_RECEIPT: "/collector/warehouse-receipt-collector",
     HARVEST_REPORT: "/collector/harvest-report-collector",
 }
 
@@ -26,7 +30,10 @@ export const routes = {
         home: () => COLLECTOR.HOME,
         registerProfile: () => COLLECTOR.REGISTER_PROFILE,
         harvestReport: () => COLLECTOR.HARVEST_REPORT,
-        detail: (id: string | number) => `/products/${id}`,
+        logistic: () => COLLECTOR.LOGISTIC,
+        receipts: () => COLLECTOR.WAREHOUSE_RECEIPT,
+        warehouse: () => COLLECTOR.WAREHOUSE,
+        insurance: () => COLLECTOR.INSURANCE,
     },
     investor: {
         home: () => INVESTOR.HOME,

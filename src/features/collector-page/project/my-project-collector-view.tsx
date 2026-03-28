@@ -93,7 +93,7 @@ export default function MyProjectCollectorView() {
     <Box
       display="flex"
       flexDirection="column"
-      padding={{ xs: "100px 20px 40px", md: "40px" }}
+      padding={{ xs: "20px 16px 40px", md: "40px" }}
       maxWidth="1200px" // To match the design's bounded width
       margin="0 auto"
       width="100%"
@@ -243,7 +243,7 @@ export default function MyProjectCollectorView() {
         }}
       >
         <TableContainer>
-          <Table sx={{ minWidth: 800 }}>
+          <Table sx={{ minWidth: 700 }}>
             <TableHead>
               <TableRow sx={{ borderBottom: `1px solid ${borderColors}` }}>
                 {[
@@ -390,9 +390,11 @@ export default function MyProjectCollectorView() {
         {/* Pagination Details */}
         <Box
           display="flex"
+          flexDirection={{ xs: "column", sm: "row" }}
           justifyContent="space-between"
-          alignItems="center"
+          alignItems={{ xs: "flex-start", sm: "center" }}
           p={3}
+          gap={{ xs: 2, sm: 0 }}
           borderTop={`1px solid ${borderColors}`}
         >
           <Typography color={textSecondary} variant="body2">

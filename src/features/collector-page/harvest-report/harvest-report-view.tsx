@@ -40,7 +40,7 @@ export default function HarvestReportView() {
     <Box
       display="flex"
       flexDirection="column"
-      padding={{ xs: "100px 20px 40px", md: "40px" }}
+      padding={{ xs: "20px 16px 40px", md: "40px" }}
       maxWidth="1400px" // Bounded layout standard
       margin="0 auto"
       width="100%"
@@ -63,7 +63,7 @@ export default function HarvestReportView() {
           </Typography>
         </Box>
 
-        <Box display="flex" bgcolor={theme.colors.bgColors} borderRadius={2} p={0.5} border={`1px solid ${borderColors}`}>
+        <Box display="flex" flexWrap="wrap" bgcolor={theme.colors.bgColors} borderRadius={2} p={0.5} border={`1px solid ${borderColors}`}>
           <Button
             sx={{
               color: textSecondary,
@@ -229,7 +229,7 @@ export default function HarvestReportView() {
                 <Typography variant="h6" color={textPrimary} fontWeight={700}>
                   Yield by Crop
                 </Typography>
-                <Box display="flex" gap={3}>
+                <Box display="flex" gap={3} flexWrap="wrap">
                   <Box display="flex" alignItems="center" gap={1}>
                     <Box width={12} height={12} borderRadius={0.5} bgcolor={theme.colors.fourGreenColors} />
                     <Typography variant="caption" color={textSecondary} fontWeight={700}>COFFEE</Typography>
